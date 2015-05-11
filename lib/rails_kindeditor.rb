@@ -35,7 +35,7 @@ module RailsKindeditor
   
   def self.assets
     Dir[root_path.join('vendor/assets/javascripts/kindeditor/**', '*.{js,css}')].inject([]) do |assets, path|
-      assets << Pathname.new(path).relative_path_from(root_path.join('vendor/assets/javascripts'))
+      assets << Pathname.new(path).relative_path_from(root_path.join('vendor/assets/javascripts')).to_s
     end
   end
   
